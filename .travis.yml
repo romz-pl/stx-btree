@@ -1,8 +1,8 @@
 language: cpp
+
 compiler:
+  - clang
   - gcc
-
-
 
 before_install:
   # C++17
