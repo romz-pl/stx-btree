@@ -12,10 +12,14 @@ See the original page for more details: [STX B+ Tree](https://github.com/bingman
 
 * The B+ tree source package contains a speedtest program which compares the libstdc++ STL red-black tree with the implemented B+ tree with many different parameters.
 
+* For more information about B+ trees see:
+   * [wiki pages](https://en.wikipedia.org/wiki/B+_tree) in Wikipedia
+   * wiki pages in my project [b-plus-tree](https://github.com/romz-pl/b-plus-tree/wiki)
+
 * cmake is used as a build system.
 
 * It was successfully compiled and passed the test on following compilers:
   * g++: 4.9, 5.x, 6.x, 7.x
-  * clang: 3.9, 4.x, 5.x, 6.x 
+  * clang: 3.9, 4.x, 5.x 
 
 
