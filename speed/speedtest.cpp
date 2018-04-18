@@ -28,13 +28,13 @@
 #include <cassert>
 
 #include <set>
-#include <ext/hash_set>
-#include <tr1/unordered_set>
+// #include <ext/hash_set>
+#include <unordered_set>
 #include <btree_multiset.h>
 
 #include <map>
-#include <ext/hash_map>
-#include <tr1/unordered_map>
+// #include <ext/hash_map>
+#include <unordered_map>
 #include <btree_multimap.h>
 
 // *** Settings
@@ -156,10 +156,10 @@ public:
     typedef TestClass<std::multiset<unsigned int> > StdSet;
 
     /// Test the multiset hash from gcc's STL extensions
-    typedef TestClass<__gnu_cxx::hash_multiset<unsigned int> > HashSet;
+    // typedef TestClass<__gnu_cxx::hash_multiset<unsigned int> > HashSet;
 
     /// Test the unordered_set from STL TR1
-    typedef TestClass<std::tr1::unordered_multiset<unsigned int> > UnorderedSet;
+    typedef TestClass<std::unordered_multiset< unsigned int > > UnorderedSet;
 
     /// Test the B+ tree with a specific leaf/inner slots
     template <int Slots>
@@ -269,12 +269,11 @@ public:
     typedef TestClass<std::multimap<unsigned int, unsigned int> > StdMap;
 
     /// Test the multimap hash from gcc's STL extensions
-    typedef TestClass<__gnu_cxx::hash_multimap<
-                          unsigned int, unsigned int> > HashMap;
+    //typedef TestClass<__gnu_cxx::hash_multimap<
+    //                      unsigned int, unsigned int> > HashMap;
 
     /// Test the unordered_map from STL TR1
-    typedef TestClass<std::tr1::unordered_multimap<
-                          unsigned int, unsigned int> > UnorderedMap;
+    typedef TestClass<std::unordered_multimap< unsigned int, unsigned int > > UnorderedMap;
 
     /// Test the B+ tree with a specific leaf/inner slots
     template <int Slots>
@@ -369,7 +368,7 @@ void TestFactory_Set<TestClass>::call_testrunner(
     os << items << " " << std::flush;
 
     testrunner_loop<StdSet>(os, items);
-    testrunner_loop<HashSet>(os, items);
+    // testrunner_loop<HashSet>(os, items);
     testrunner_loop<UnorderedSet>(os, items);
 
 #if 1
@@ -401,7 +400,7 @@ void TestFactory_Map<TestClass>::call_testrunner(
     os << items << " " << std::flush;
 
     testrunner_loop<StdMap>(os, items);
-    testrunner_loop<HashMap>(os, items);
+    // testrunner_loop<HashMap>(os, items);
     testrunner_loop<UnorderedMap>(os, items);
 
 #if 1
